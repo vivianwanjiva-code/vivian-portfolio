@@ -6,6 +6,24 @@
   <title>Vivian Wanjiva | Virtual Assistant & Social Media Manager</title>
   <meta name="description" content="Professional virtual assistant and social media support for businesses and entrepreneurs." />
   <style>
+    .floating-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  background: #25d366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
     :root {
       --bg: #f7f4ef;
       --surface: #ffffff;
@@ -22,6 +40,14 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    <a
+  class="floating-whatsapp"
+  href="https://wa.me/254759249424"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  WhatsApp Me
+</a>
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
