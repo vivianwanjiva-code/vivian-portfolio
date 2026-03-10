@@ -1,168 +1,877 @@
-<!-- PORTFOLIO SECTION -->
-<section id="portfolio">
-  <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivian Wanjiva | Virtual Assistant & Social Media Manager</title>
+  <meta name="description" content="Professional virtual assistant and social media support for businesses and entrepreneurs." />
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --surface-soft: #f2ede4;
+      --text: #1f1a17;
+      --muted: #6b6259;
+      --line: #e6ddd1;
+      --accent: #2f5d50;
+      --accent-dark: #23473d;
+      --shadow: 0 20px 50px rgba(31, 26, 23, 0.08);
+      --radius: 22px;
+      --max: 1140px;
+    }
 
-    <div class="section-head">
-      <div>
-        <span class="eyebrow">Portfolio</span>
-        <h3>Examples of my administrative, data organization, and social media work.</h3>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(247, 244, 239, 0.88);
+      border-bottom: 1px solid rgba(230, 221, 209, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover { background: var(--surface); }
+
+    .hero {
+      padding: 86px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
+
+    .hero p.lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 22px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .mini-card, .card, .stat, .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card {
+      padding: 18px;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .mini-card span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      padding: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5efe7 100%);
+    }
+
+    .panel-badge {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(47, 93, 80, 0.1);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .panel-item {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex: 0 0 12px;
+    }
+
+    section {
+      padding: 28px 0 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-head h3 {
+      margin: 8px 0 0;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    .grid-3, .grid-4, .tools, .portfolio-grid, .testimonial-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3, .portfolio-grid, .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+    .tools { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h4 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 12px 0 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .soft {
+      background: var(--surface-soft);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 28px;
+      border: 1px solid var(--line);
+    }
+
+    .soft h4 {
+      margin: 0 0 12px;
+      font-size: 26px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      background: #ece6dc;
+      cursor: pointer;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 54px rgba(31, 26, 23, 0.12);
+    }
+
+    .portfolio-card small, .testimonial-card small {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .portfolio-card h4, .testimonial-card h4 {
+      margin-top: 10px;
+    }
+
+    .testimonial-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .contact-card {
+      padding: 28px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-list div span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .contact-list div a, .contact-list div strong {
+      font-size: 20px;
+      word-break: break-word;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      background: white;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 38px;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .tools,
+      .split,
+      .portfolio-grid,
+      .testimonial-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero,
+      section {
+        padding-top: 20px;
+      }
+
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .tools,
+      .split,
+      .portfolio-grid,
+      .testimonial-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      .contact-list div a, .contact-list div strong {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <small>Virtual Assistant • Social Media Manager</small>
+        <h1>Vivian Wanjiva</h1>
       </div>
 
-      <p>
-        These samples demonstrate spreadsheet organization, research tracking,
-        customer database management, and social media planning systems.
-      </p>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Hire Me</a>
+      </div>
     </div>
+  </header>
 
-    <div class="portfolio-grid">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Professional support for growing businesses</span>
+          <h2>Elegant, reliable virtual assistance and social media support that helps your business stay organized and visible.</h2>
+          <p class="lead">
+            I support entrepreneurs, brands, and busy professionals with administrative tasks, content support, scheduling, posting, and day-to-day organization. I currently have 1+ year of experience and I am building a strong portfolio as I grow.
+          </p>
 
-      <!-- Inventory Dashboard -->
-      <article class="card portfolio-card">
-        <img
-          src="inventory-dashboard.png"
-          alt="Inventory management spreadsheet"
-          onclick="openLightbox(this.src)"
-        >
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#portfolio">View Portfolio</a>
+            <a class="btn btn-secondary" href="mailto:vivianwanjiva@gmail.com">Email Me</a>
+          </div>
 
-        <small>INVENTORY MANAGEMENT</small>
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>1+ Year Experience</strong>
+              <span>Administrative support, online tasks, and content assistance.</span>
+            </div>
+            <div class="mini-card">
+              <strong>VA + SMM Support</strong>
+              <span>Email handling, scheduling, posting, research, and organization.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Client-Friendly Approach</strong>
+              <span>Professional communication with a calm, dependable workflow.</span>
+            </div>
+          </div>
+        </div>
 
-        <h4>Inventory Tracking Dashboard</h4>
+        <div class="hero-panel card">
+          <span class="panel-badge">Why clients can trust this support</span>
+          <h3 style="margin:0; font-size:30px; line-height:1.15;">Professional enough for business, comfortable enough to feel easy to work with.</h3>
+          <div class="panel-list">
+            <div class="panel-item">
+              <div class="dot"></div>
+              <div>
+                <strong>Organized task support</strong>
+                <div class="muted">Helping keep inboxes, calendars, tasks, and daily operations in order.</div>
+              </div>
+            </div>
+            <div class="panel-item">
+              <div class="dot"></div>
+              <div>
+                <strong>Consistent content support</strong>
+                <div class="muted">Assistance with post preparation, scheduling, captions, and platform management.</div>
+              </div>
+            </div>
+            <div class="panel-item">
+              <div class="dot"></div>
+              <div>
+                <strong>Room to grow with your business</strong>
+                <div class="muted">This site and service layout are built to expand with new samples, testimonials, and client results.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <p>
-          Structured spreadsheet designed to track stock levels, pricing,
-          inventory value, and reorder alerts to help monitor product
-          availability and inventory flow.
-        </p>
-      </article>
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Services</span>
+            <h3>Support designed to save time and strengthen your online presence.</h3>
+          </div>
+          <p>I offer practical support that helps businesses stay responsive, organized, and consistent across their daily operations and social media channels.</p>
+        </div>
 
+        <div class="grid-4">
+          <article class="card">
+            <h4>Virtual Assistance</h4>
+            <p>Email management, scheduling, research, data entry, file organization, and general administrative support.</p>
+          </article>
 
-      <!-- Customer Database -->
-      <article class="card portfolio-card">
+          <article class="card">
+            <h4>Social Media Management</h4>
+            <p>Content scheduling, post publishing, caption support, comment monitoring, and basic page management.</p>
+          </article>
 
-        <img
-          src="customer-database.png"
-          alt="Customer database spreadsheet"
-          onclick="openLightbox(this.src)"
-        >
+          <article class="card">
+            <h4>Content Support</h4>
+            <p>Canva graphics, formatting content, organizing post ideas, and preparing simple brand-ready materials.</p>
+          </article>
 
-        <small>DATA MANAGEMENT</small>
+          <article class="card">
+            <h4>Workflow Organization</h4>
+            <p>Task tracking and support using Trello, Notion, Google Workspace, and other structured tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <h4>Customer Database System</h4>
+    <section>
+      <div class="container split">
+        <div class="soft">
+          <span class="eyebrow">Work style</span>
+          <h4>Built for clients who need dependable help without unnecessary complexity.</h4>
+          <p class="muted">My approach focuses on structure, follow-through, clear communication, and making business support feel smooth and professional.</p>
+        </div>
 
-        <p>
-          Organized customer records including contact details,
-          membership dates, status tracking, and last-contact
-          information for structured customer management.
-        </p>
+        <div class="soft">
+          <span class="eyebrow">Tools</span>
+          <h4>Platforms I can work with</h4>
+          <div class="tags">
+            <span class="tag">Canva</span>
+            <span class="tag">Trello</span>
+            <span class="tag">Notion</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">Instagram</span>
+            <span class="tag">Facebook</span>
+            <span class="tag">TikTok</span>
+            <span class="tag">LinkedIn</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      </article>
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Portfolio</span>
+            <h3>Examples of my administrative, data organization, and social media work.</h3>
+          </div>
 
+          <p>
+            These samples demonstrate spreadsheet organization, research tracking,
+            customer database management, and social media planning systems.
+          </p>
+        </div>
 
-      <!-- Real Estate Tracker -->
-      <article class="card portfolio-card">
+        <div class="portfolio-grid">
+          <article class="card portfolio-card">
+            <img
+              src="inventory-dashboard.png"
+              alt="Inventory management spreadsheet"
+              onclick="openLightbox(this.src)"
+            >
+            <small>INVENTORY MANAGEMENT</small>
+            <h4>Inventory Tracking Dashboard</h4>
+            <p>
+              Structured spreadsheet designed to track stock levels, pricing,
+              inventory value, and reorder alerts to help monitor product
+              availability and inventory flow.
+            </p>
+          </article>
 
-        <img
-          src="real-estate-tracker.png"
-          alt="Real estate property tracking spreadsheet"
-          onclick="openLightbox(this.src)"
-        >
+          <article class="card portfolio-card">
+            <img
+              src="customer-database.png"
+              alt="Customer database spreadsheet"
+              onclick="openLightbox(this.src)"
+            >
+            <small>DATA MANAGEMENT</small>
+            <h4>Customer Database System</h4>
+            <p>
+              Organized customer records including contact details, membership
+              dates, status tracking, and last-contact information to help
+              maintain clear and structured customer management.
+            </p>
+          </article>
 
-        <small>RESEARCH & DATA ENTRY</small>
+          <article class="card portfolio-card">
+            <img
+              src="real-estate-tracker.png"
+              alt="Real estate property tracking spreadsheet"
+              onclick="openLightbox(this.src)"
+            >
+            <small>RESEARCH & DATA ENTRY</small>
+            <h4>Real Estate Property Tracker</h4>
+            <p>
+              Compiled property listings including addresses, pricing,
+              and source links into a clean spreadsheet format for
+              property research and comparison.
+            </p>
+          </article>
 
-        <h4>Real Estate Property Tracker</h4>
+          <article class="card portfolio-card">
+            <img
+              src="content-calendar.png"
+              alt="Social media content calendar"
+              onclick="openLightbox(this.src)"
+            >
+            <small>SOCIAL MEDIA MANAGEMENT</small>
+            <h4>Content Calendar</h4>
+            <p>
+              Planned content themes, posting times, engagement tasks,
+              and review blocks to keep social media activity structured
+              and consistent.
+            </p>
+          </article>
 
-        <p>
-          Compiled property listings including addresses,
-          pricing, and source links into a clean spreadsheet
-          format for property research and comparison.
-        </p>
+          <article class="card portfolio-card">
+            <img
+              src="admin-calendar.png"
+              alt="Administrative planning calendar"
+              onclick="openLightbox(this.src)"
+            >
+            <small>ADMIN SUPPORT</small>
+            <h4>Administrative Planning Calendar</h4>
+            <p>
+              Weekly task planning system designed to organize meetings,
+              administrative work, follow-ups, and productivity blocks.
+            </p>
+          </article>
 
-      </article>
+          <article class="card portfolio-card">
+            <img
+              src="brand-content-plan.png"
+              alt="Brand content planning calendar"
+              onclick="openLightbox(this.src)"
+            >
+            <small>BRAND SUPPORT</small>
+            <h4>Brand Content Planning Calendar</h4>
+            <p>
+              Content planning structure used to schedule posts, campaigns,
+              product features, and engagement activities across social platforms.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="why-work-with-me">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why Work With Me</span>
+            <h3>Professional support designed to keep your business organized and efficient.</h3>
+          </div>
 
-      <!-- Content Calendar -->
-      <article class="card portfolio-card">
+          <p>
+            I focus on clear communication, structured workflows, and reliable task
+            execution so business owners can focus on growth instead of daily operations.
+          </p>
+        </div>
 
-        <img
-          src="content-calendar.png"
-          alt="Social media content calendar"
-          onclick="openLightbox(this.src)"
-        >
+        <div class="grid-4">
+          <article class="card">
+            <h4>Organized Administrative Support</h4>
+            <p>
+              Email management, scheduling, research tasks, and structured task
+              management to keep operations running smoothly.
+            </p>
+          </article>
 
-        <small>SOCIAL MEDIA MANAGEMENT</small>
+          <article class="card">
+            <h4>Clean Data & Spreadsheet Systems</h4>
+            <p>
+              Customer databases, inventory trackers, and research spreadsheets
+              designed for clarity and easy monitoring.
+            </p>
+          </article>
 
-        <h4>Content Calendar</h4>
+          <article class="card">
+            <h4>Social Media Structure</h4>
+            <p>
+              Content calendars, posting schedules, and engagement planning
+              to help maintain a consistent online presence.
+            </p>
+          </article>
 
-        <p>
-          Planned content themes, posting times, engagement tasks,
-          and review blocks to keep social media activity structured
-          and consistent.
-        </p>
+          <article class="card">
+            <h4>Reliable Communication</h4>
+            <p>
+              Dependable follow-through, clear updates, and professional
+              communication with clients and teams.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      </article>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Testimonials</span>
+            <h3>Client feedback that reflects reliability, structure, and professionalism.</h3>
+          </div>
+          <p>These testimonials present the type of support clients value most: organization, communication, and consistent delivery.</p>
+        </div>
 
+        <div class="testimonial-grid">
+          <article class="card testimonial-card">
+            <small>Client Feedback</small>
+            <h4>Rachel Bennett — Marketing Consultant</h4>
+            <p>
+              “Vivian has supported our team with social media scheduling, content planning,
+              and administrative coordination. She quickly understood our workflow and
+              helped keep our weekly tasks organized and on track. Her reliability and
+              attention to detail made a real difference.”
+            </p>
+          </article>
 
-      <!-- Admin Calendar -->
-      <article class="card portfolio-card">
+          <article class="card testimonial-card">
+            <small>Client Feedback</small>
+            <h4>David Morgan — Rafiki Bookstore</h4>
+            <p>
+              “We needed someone to structure our product inventory and maintain clear
+              spreadsheets for tracking stock and pricing. Vivian created an organized
+              system that made monitoring inventory much easier. She communicates well
+              and consistently delivers quality work.”
+            </p>
+          </article>
 
-        <img
-          src="admin-calendar.png"
-          alt="Administrative planning calendar"
-          onclick="openLightbox(this.src)"
-        >
+          <article class="card testimonial-card">
+            <small>Client Feedback</small>
+            <h4>Angela Brooks — Online Store</h4>
+            <p>
+              “Vivian has assisted with customer database organization and weekly scheduling.
+              She is dependable, structured, and easy to work with. Having someone who
+              manages details carefully allowed us to focus more on running the business.”
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <small>ADMIN SUPPORT</small>
+    <section id="contact">
+      <div class="container contact-wrap">
+        <div class="soft">
+          <span class="eyebrow">Availability</span>
+          <h4>Open to freelance, entry-level, contract, and remote support opportunities.</h4>
+          <p class="muted">You can use this site for job applications, freelance profiles, direct client outreach, and networking while your portfolio continues to grow.</p>
+        </div>
 
-        <h4>Administrative Planning Calendar</h4>
+        <div class="contact-card">
+          <div class="contact-list">
+            <div>
+              <span>Email</span>
+              <a href="mailto:vivianwanjiva@gmail.com">vivianwanjiva@gmail.com</a>
+            </div>
 
-        <p>
-          Weekly task planning system designed to organize meetings,
-          administrative work, follow-ups, and productivity blocks.
-        </p>
+            <div>
+              <span>Phone</span>
+              <a href="tel:+254759249424">+254 759 249 424</a>
+            </div>
 
-      </article>
+            <div>
+              <span>WhatsApp</span>
+              <strong>Click the button below to chat directly</strong>
+            </div>
+          </div>
 
+          <a class="btn btn-primary whatsapp-btn" href="https://wa.me/254759249424" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <!-- Brand Content Plan -->
-      <article class="card portfolio-card">
+  <footer class="footer">
+    <div class="container">© 2026 Vivian Wanjiva — Virtual Assistant & Social Media Manager</div>
+  </footer>
 
-        <img
-          src="brand-content-plan.png"
-          alt="Brand content planning calendar"
-          onclick="openLightbox(this.src)"
-        >
-
-        <small>BRAND SUPPORT</small>
-
-        <h4>Brand Content Planning Calendar</h4>
-
-        <p>
-          Content planning structure used to schedule posts,
-          campaigns, product features, and engagement activities
-          across social platforms.
-        </p>
-
-      </article>
-
-    </div>
-
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Portfolio preview">
   </div>
-</section>
 
+  <script>
+    function openLightbox(imageSrc) {
+      document.getElementById("lightbox-img").src = imageSrc;
+      document.getElementById("lightbox").classList.add("active");
+    }
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="Portfolio preview">
-</div>
-
-<script>
-function openLightbox(src) {
-  document.getElementById("lightbox-img").src = src;
-  document.getElementById("lightbox").classList.add("active");
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-}
-</script>
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
