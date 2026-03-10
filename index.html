@@ -6,24 +6,6 @@
   <title>Vivian Wanjiva | Virtual Assistant & Social Media Manager</title>
   <meta name="description" content="Professional virtual assistant and social media support for businesses and entrepreneurs." />
   <style>
-    .floating-whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 999;
-  background: #25d366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 999px;
-  font-weight: 700;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.floating-whatsapp:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-}
     :root {
       --bg: #f7f4ef;
       --surface: #ffffff;
@@ -40,14 +22,6 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    <a
-  class="floating-whatsapp"
-  href="https://wa.me/254759249424"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  WhatsApp Me
-</a>
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
@@ -341,6 +315,26 @@
       color: var(--muted);
     }
 
+    .portfolio-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      background: #ece6dc;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 54px rgba(31, 26, 23, 0.12);
+    }
+
     .portfolio-card small, .testimonial-card small {
       color: var(--accent);
       text-transform: uppercase;
@@ -608,21 +602,45 @@
 
         <div class="portfolio-grid">
           <article class="card portfolio-card">
-            <small>Virtual Assistance</small>
-            <h4>Inbox and Scheduling Support</h4>
-            <p>Use this card later to describe a real admin task you handled, the process you followed, and the outcome for the client or business.</p>
+            <img src="images/inventory-dashboard.png" alt="Inventory management spreadsheet sample">
+            <small>Inventory Management</small>
+            <h4>Inventory Tracking Dashboard</h4>
+            <p>Structured spreadsheet for tracking stock levels, reorder points, unit pricing, and stock value to support inventory monitoring and decision-making.</p>
           </article>
 
           <article class="card portfolio-card">
+            <img src="images/customer-database.png" alt="Customer database spreadsheet sample">
+            <small>Data Management</small>
+            <h4>Customer Database System</h4>
+            <p>Organized customer records with contact details, join dates, status tracking, and last-contact fields for cleaner follow-up management.</p>
+          </article>
+
+          <article class="card portfolio-card">
+            <img src="images/real-estate-tracker.png" alt="Real estate tracking spreadsheet sample">
+            <small>Research & Data Entry</small>
+            <h4>Real Estate Property Tracker</h4>
+            <p>Compiled addresses, pricing, and source links into a clean research sheet to support property review and comparison work.</p>
+          </article>
+
+          <article class="card portfolio-card">
+            <img src="images/content-calendar.png" alt="Social media content calendar sample">
             <small>Social Media Management</small>
-            <h4>Content Planning and Posting</h4>
-            <p>Replace this with a future example showing content scheduling, post design, caption writing, engagement support, or consistency improvement.</p>
+            <h4>Weekly Content Calendar</h4>
+            <p>Planned content themes, posting times, engagement tasks, and review blocks to keep social media activity structured and consistent.</p>
           </article>
 
           <article class="card portfolio-card">
-            <small>Organization & Workflow</small>
-            <h4>Research or Task Tracking Example</h4>
-            <p>Add a sample here for Trello, Notion, research work, data entry, file organization, or any process improvement you support later.</p>
+            <img src="images/admin-calendar.png" alt="Administrative calendar scheduling sample">
+            <small>Scheduling & Admin</small>
+            <h4>Admin and Meeting Schedule</h4>
+            <p>Weekly calendar layout showing task planning, meetings, follow-ups, and admin time blocks for organized day-to-day support.</p>
+          </article>
+
+          <article class="card portfolio-card">
+            <img src="images/brand-content-plan.png" alt="Brand content planning schedule sample">
+            <small>Brand Support</small>
+            <h4>Brand Content & Engagement Plan</h4>
+            <p>Content workflow with posting windows, customer response blocks, planning sessions, and review tasks for brand consistency.</p>
           </article>
         </div>
       </div>
